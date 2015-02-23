@@ -31,7 +31,7 @@
 ## Установка 
 
 1. Установить **Greasemonkey** или подобное. Читать выше.
-2. Пройти по ссылке https://raw.githubusercontent.com/RecursivePie/Wastificator/master/page\_wastificator.user.js
+2. Пройти по ссылке https://raw.githubusercontent.com/RecursivePie/Wastificator/master/page_wastificator.user.js
 
 ## Стили
 ### ps1
