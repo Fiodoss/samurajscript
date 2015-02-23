@@ -24,6 +24,14 @@
 5. ?????
 6. Обойдемся без этой шутки
 
+# PageWastificator
+
+Стилизирует уже сам текст страницы
+
+## Установка 
+
+1. Установить **Greasemonkey** или подобное. Читать выше.
+2. Пройти по ссылке https://raw.githubusercontent.com/RecursivePie/Wastificator/master/page\_wastificator.user.js
 
 ## Стили
 ### ps1
