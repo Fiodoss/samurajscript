@@ -3,7 +3,7 @@
 // @namespace   ru.recursivepie.wastificator
 // @require 	https://raw.githubusercontent.com/RecursivePie/Wastificator/master/styles.js
 // @include     *
-// @version     6.3
+// @version     6.4
 // @grant       none
 //
 // @author      RecursivePie (recursivepie@gmail.com)
@@ -74,14 +74,32 @@ function buttonClicked(evt) {
 }
 
 function styleClicked(evt) {
+	
+	var noSelection = false;
+	
 	var target = evt.srcElement || evt.originalTarget;
 	var e = elements.contextTextArea;
-	var val = e.value.substring(e.selectionStart, e.selectionEnd);
+
+	var selStart = e.selectionStart;
+	var selEnd = e.selectionEnd;
+	if(selStart - selEnd <= 0) {
+		noSelection = true;
+		selStart = 0;
+		selEnd = e.value.length;
+	}
+	
+	var val = e.value.substring(selStart, selEnd);
+	
 	var wastified = styles[target.textContent].getWastified(val);
+
 	var len = wastified.length;
-	var full = e.value.substring(0, e.selectionStart) + wastified
-			+ e.value.substring(e.selectionEnd);
+	
+	var full = e.value.substring(0, selStart) + wastified
+			+ e.value.substring(selEnd);
 	e.value = full;
+	if(noSelection) {
+		putClicked();
+	}
 }
 
 function showContextMenu() {

@@ -303,10 +303,26 @@ var styles = {
 		adds : '\u0333',
 		getWastified : function(s) {
 			var ans = "";
-			console.log(s);
-			console.log(this.adds);
 			for (var i = 0; i < s.length; i++) {
 				ans += this.adds + s[i];
+			}
+			return ans;
+		}
+	},
+	"capspace" : {
+		getWastified : function(s) {
+			var nbsp = '\u00A0';
+			var ans = "";
+			var ss = s.toUpperCase();
+			for (var i = 0; i < ss.length; i++) {
+				if (ss[i] == ' ') {
+					ans += nbsp;
+				} else {
+					ans += ss[i];
+				}
+				if(i != ss.length - 1) {
+					ans += " ";
+				}
 			}
 			return ans;
 		}
