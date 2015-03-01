@@ -3,7 +3,7 @@
 // @namespace   ru.recursivepie.pagewastificator
 // @require 	https://raw.githubusercontent.com/RecursivePie/Wastificator/master/styles.js
 // @include     *
-// @version     0.1.1
+// @version     0.1.2
 // @grant       none
 //
 // @author      RecursivePie (recursivepie@gmail.com)
