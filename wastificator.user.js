@@ -3,7 +3,7 @@
 // @namespace   ru.recursivepie.wastificator
 // @require 	https://raw.githubusercontent.com/RecursivePie/Wastificator/master/styles.js
 // @include     *
-// @version     6.5
+// @version     6.6
 // @grant       none
 //
 // @author      RecursivePie (recursivepie@gmail.com)
@@ -82,7 +82,7 @@ function styleClicked(evt) {
 
 	var selStart = e.selectionStart;
 	var selEnd = e.selectionEnd;
-	if(selStart - selEnd <= 0) {
+	if(selEnd - selStart <= 0) {
 		noSelection = true;
 		selStart = 0;
 		selEnd = e.value.length;

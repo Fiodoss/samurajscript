@@ -3,13 +3,13 @@
 // @namespace   ru.recursivepie.pagewastificator
 // @require 	https://raw.githubusercontent.com/RecursivePie/Wastificator/master/styles.js
 // @include     *
-// @version     0.1.2
+// @version     0.1.3
 // @grant       none
 //
 // @author      RecursivePie (recursivepie@gmail.com)
 // ==/UserScript==
 
-var style = styles["ps1_lite"];
+var style = styles["sa_caps"];
 
 function kek(str) {
 	return style.getWastified(str);
