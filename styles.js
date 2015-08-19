@@ -119,7 +119,7 @@ var styles = {
 			var ans = "";
 			var rep = this.replaces;
 			for (var i = 0; i < s.length; i++) {
-				var c = s[i];
+				var c = s[i].toLowerCase();
 				if (rep[c] === null || rep[c] === undefined) {
 					ans += c;
 				} else {
@@ -142,7 +142,7 @@ var styles = {
 			var ans = "";
 			var rep = this.replaces;
 			for (var i = 0; i < s.length; i++) {
-				var c = s[i];
+				var c = s[i].toLowerCase();
 				if (rep[c] === null || rep[c] === undefined) {
 					ans += c;
 				} else {
@@ -159,18 +159,18 @@ var styles = {
 			"C" : "С",
 			"D" : "Д",
 			"E" : "Е",
-			"F" : "?",
+			"F" : "Ф",
 			"G" : "Ж",
 			"H" : "Н",
 			"I" : "I",
 			"J" : "Ь",
 			"K" : "К",
-			"L" : "?",
+			"L" : "Ч",
 			"M" : "М",
 			"N" : "И",
 			"O" : "О",
 			"P" : "Р",
-			"Q" : "?",
+			"Q" : "Ы",
 			"R" : "Я",
 			"S" : "Ы",
 			"T" : "Т",
@@ -371,5 +371,51 @@ var styles = {
 			return ans;
 		}
 	},
+	"vk_diacrit" : {
+		diacrits : [ '\u0300', '\u0301', '\u0302', '\u0303', '\u0304',
+				'\u0305', '\u0306', '\u0307', '\u0308', '\u0309', '\u030A',
+				'\u030B', '\u030C', '\u030D', '\u030E', '\u030F', '\u0310',
+				'\u0311', '\u0312', '\u0313', '\u0314', '\u0315', '\u0316',
+				'\u0317', '\u0318', '\u0319', '\u031A', '\u031B', '\u031C',
+				'\u031D', '\u031E', '\u031F', '\u0320', '\u0321', '\u0322',
+				'\u0323', '\u0324', '\u0325', '\u0326', '\u0327', '\u0328',
+				'\u0329', '\u032A', '\u032B', '\u032C', '\u032D', '\u032E',
+				'\u032F', '\u0330', '\u0331', '\u0332', '\u0333', '\u0334',
+				'\u0335', '\u0336', '\u0337', '\u0338', '\u0339', '\u033A',
+				'\u033B', '\u033C', '\u033D', '\u033E', '\u033F', '\u0340',
+				'\u0341', '\u0342', '\u0343', '\u0344', '\u0345', '\u0346',
+				'\u0347', '\u0348', '\u0349', '\u034A', '\u034B', '\u034C',
+				'\u034D', '\u034E', '\u034F', '\u0350', '\u0351', '\u0352',
+				'\u0353', '\u0354', '\u0355', '\u0356', '\u0357', '\u0358',
+				'\u0359', '\u035A', '\u035B', '\u035C', '\u035D', '\u035E',
+				'\u035F', '\u0360', '\u0361', '\u0362', '\u0363', '\u0364',
+				'\u0365', '\u0366', '\u0367', '\u0368', '\u0369', '\u036A',
+				'\u036B', '\u036C', '\u036D', '\u036E', '\u036F' ],
+		getDiacrits : function() {
+			// var n = Math.floor(Math.random() * 10) + 1;
+			var n = 1;
+			var ans = "";
+			var numbers = "_" + n;
+			for (var i = 0; i < n; i++) {
+				var x = Math.floor(Math.random() * this.diacrits.length);
+				numbers += x;
+				ans += "" + this.diacrits[x];
+			}
+			console.log(numbers);
+			return ans;
+			// return this.adds[6];
+		},
+		getWastified : function(s) {
+			console.log("vk diacrit " + s);
+			var ans = "";
+			for (var i = 0; i < s.length; i++) {
+				console.log("#" + s[i] + "#");
+				ans += this.getDiacrits() + s[i];
+			}
+			ans += this.getDiacrits();
+			console.log(ans);
+			return ans;
+		}
+	}
 
 }

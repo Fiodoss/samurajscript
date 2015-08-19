@@ -9,10 +9,21 @@
 // @author      RecursivePie (recursivepie@gmail.com)
 // ==/UserScript==
 
+
 var style = styles["sa_caps"];
+//var style = styles["ps1"];
+
+
+var observer;
 
 function kek(str) {
 	return style.getWastified(str);
+}
+
+function wastifyNode(node) {
+	if(node.nodeName == "#text") {
+		el.nodeValue = style.getWastified(el.nodeValue);
+	}
 }
 
 function see(el) {
@@ -35,10 +46,26 @@ function main() {
 	// var topLinks = document.getElementById("top_links");
 	// see(document);
 	// // see(topLinks);
+	
 	see(document);
-	document.addEventListener("click", function() {
-		see(document);
-	}, true);
+	
+	observer = new MutationObserver(function(mutations) {
+		console.log("MUTATION");
+		mutations.addedNodes.forEach(wastifyNode);
+	});
+
+	console.log("Made observer");
+	
+	var config = {
+		attributes : true,
+		childList : true,
+		characterData : true
+	}
+	
+	observer.observe(document, config);
+
+	console.log("Starting observing");
+	
 }
 
 main();
