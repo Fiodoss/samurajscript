@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        PageWastificator
 // @namespace   ru.recursivepie.pagewastificator
-// @require 	https://raw.githubusercontent.com/RecursivePie/Wastificator/master/styles.js
+// @require 	https://raw.githubusercontent.com/Fiodoss/samurajscript/master/styles.js
 // @include     *
 // @version     0.1.3
 // @grant       none
